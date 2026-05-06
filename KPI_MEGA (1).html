@@ -920,6 +920,12 @@
         const iframe1 = document.getElementById("powerbi-frame-1");
         const iframe2 = document.getElementById("powerbi-frame-2");
 
+        // Carregar a primeira URL quando a página carregar
+        window.addEventListener('load', function() {
+            iframe1.src = urls[curr];
+            showPanel();
+        });
+
         const playPauseBtn = document.getElementById("playPauseBtn");
         const pauseIcon = document.getElementById("pauseIcon");
         const playIcon = document.getElementById("playIcon");
@@ -1018,8 +1024,6 @@
         document.addEventListener("mousemove", resetInactivityTimer);
         document.addEventListener("keydown", resetInactivityTimer);
         resetInactivityTimer();
-
-        showPanel();
     </script>
 </body>
 
